@@ -15,6 +15,7 @@ gradlePlugin {
     vcsUrl.set("https://github.com/MarathonLabs/marathon")
     plugins {
         create("marathon-gradle-plugin") {
+            version = "test1"
             id = "com.malinskiy.marathon"
             displayName = "Gradle plugin for Marathon test runner"
             description = "Marathon is a fast and platform-independent test runner focused on performance and stability"

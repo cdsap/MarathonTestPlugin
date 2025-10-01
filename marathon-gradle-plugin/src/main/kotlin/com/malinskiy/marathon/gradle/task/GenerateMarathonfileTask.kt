@@ -63,7 +63,7 @@ open class GenerateMarathonfileTask @Inject constructor(objects: ObjectFactory) 
         println("task action2 "+sdk.get().asFile)
         println("task action2 "+sdk.get())
         sdk.get().asFileTree.files.forEach {
-            println("INAKI" +it.name)
+            println("INAKI " +it.path)
         }
 
         val androidConfiguration = vendorConfigurationBuilder.let { json.parseVendor(it.get()) }.apply {

@@ -60,6 +60,9 @@ open class GenerateMarathonfileTask @Inject constructor(objects: ObjectFactory) 
 
         // Override stuff coming from AGP
         println("task action2")
+        println("task action2 "+sdk.get().asFile)
+        println("task action2 "+sdk.get())
+
         val androidConfiguration = vendorConfigurationBuilder.let { json.parseVendor(it.get()) }.apply {
             androidSdk = sdk.get().asFile
             outputs = mapAndroidOutputs(applicationBundle.get(), flavorName.get())

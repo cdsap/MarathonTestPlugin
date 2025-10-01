@@ -50,7 +50,6 @@ class MarathonPlugin : Plugin<Project> {
         })
 
         val appExtension = project.extensions.findByType(ApplicationAndroidComponentsExtension::class.java)
-        println("applyingi the pluyfin2")
 
         val libraryExtension = project.extensions.findByType(LibraryAndroidComponentsExtension::class.java)
         val testExtension = project.extensions.findByType(TestAndroidComponentsExtension::class.java)
@@ -59,6 +58,8 @@ class MarathonPlugin : Plugin<Project> {
 
         when {
             appExtension != null -> {
+                println("applyingi the pluyfin2 "+appExtension.sdkComponents.sdkDirectory.get())
+
                 val sdkDirectory: Provider<Directory> = appExtension.sdkComponents.sdkDirectory
                 appExtension.onVariants { applicationVariant ->
                     val androidTest = applicationVariant.androidTest

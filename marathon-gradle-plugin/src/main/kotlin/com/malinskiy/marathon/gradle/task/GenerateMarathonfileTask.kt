@@ -53,20 +53,23 @@ open class GenerateMarathonfileTask @Inject constructor(objects: ObjectFactory) 
 
     @Internal
     val jsonService: Property<JsonService> = objects.property()
-    
+
     @TaskAction
     fun write() {
+        println("task action1")
         val json = jsonService.get()
-        
+
         // Override stuff coming from AGP
+        println("task action2")
         val androidConfiguration = vendorConfigurationBuilder.let { json.parseVendor(it.get()) }.apply {
             androidSdk = sdk.get().asFile
             outputs = mapAndroidOutputs(applicationBundle.get(), flavorName.get())
         }.build()
+        println("task action3")
         val cnf = configurationBuilder.let { json.parse(it.get()) }.apply {
             vendorConfiguration = androidConfiguration
         }.build()
-
+        println("task action4")
         // Write a Marathonfile
         val configurationFactory = ConfigurationFactory(
             marathonfileDir = temporaryDir,

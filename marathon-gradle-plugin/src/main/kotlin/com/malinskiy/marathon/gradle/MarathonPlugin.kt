@@ -35,6 +35,7 @@ class MarathonPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         val logger = project.logger
         logger.info("Applying marathon plugin")
+        println("pasing 1")
         val marathonExtension = project.extensions.create("marathon", MarathonExtension::class.java)
 
         val rootProject = project.rootProject
@@ -49,6 +50,8 @@ class MarathonPlugin : Plugin<Project> {
         })
 
         val appExtension = project.extensions.findByType(ApplicationAndroidComponentsExtension::class.java)
+        println("applyingi the pluyfin2")
+
         val libraryExtension = project.extensions.findByType(LibraryAndroidComponentsExtension::class.java)
         val testExtension = project.extensions.findByType(TestAndroidComponentsExtension::class.java)
         val conf =

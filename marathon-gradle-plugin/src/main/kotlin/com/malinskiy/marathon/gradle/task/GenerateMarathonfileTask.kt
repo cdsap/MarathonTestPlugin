@@ -44,8 +44,7 @@ open class GenerateMarathonfileTask @Inject constructor(objects: ObjectFactory) 
     @Nested
     val applicationBundle: ListProperty<GradleAndroidTestBundle> = objects.listProperty()
 
-    @InputDirectory
-    @PathSensitive(PathSensitivity.NAME_ONLY)
+    @Internal
     val sdk: DirectoryProperty = objects.directoryProperty()
 
     @OutputFile

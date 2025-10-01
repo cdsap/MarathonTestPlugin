@@ -245,6 +245,7 @@ class MarathonPlugin : Plugin<Project> {
                     GenerateMarathonfileTask::class.java
                 ) {
                     group = Const.GROUP
+                    println("configuration thig")
                     description = "Generates Marathonfile for '${variantName}' variation"
                     flavorName.set(variantName)
                     applicationBundle.set(listOf(bundle))
